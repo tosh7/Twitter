@@ -7,29 +7,39 @@
 //
 
 import UIKit
+import TwitterKit
+import TwitterCore
 
 class StartViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        let logInButton = TWTRLogInButton(logInCompletion: { session, error in
+            if (session != nil) {
+                print("signed in as \(session?.userName)");
+            } else {
+                print("error: \(error?.localizedDescription)");
+            }
+        })
+        logInButton.center = self.view.center
+        self.view.addSubview(logInButton)
+        
+        
+        TWTRTwitter.sharedInstance().logIn(completion: { (session, error) in
+            if (session != nil) {
+                print("signed in as \(session?.userName)");
+            } else {
+                print("error: \(error?.localizedDescription)");
+            }
+        })
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        return TWTRTwitter.sharedInstance().application(app, open: url, options: options)
     }
-    */
-
+    
+    
 }
