@@ -105,7 +105,7 @@ typedef NS_ENUM(NSUInteger, TWTRTweetViewTheme) {
 
  _Note:_ You can't change the theme through an appearance proxy after the view has already been added to the view hierarchy. Direct `theme` property access will work though.
  */
-@interface TWTRTweetView : UIView <UIAppearanceContainer>
+@interface  TWTRTweetView : UIView <UIAppearanceContainer>
 
 /**
  *  The Tweet being displayed.
