@@ -9,11 +9,12 @@
 import UIKit
 import TwitterKit
 
-class TImeLineTableViewController: UITableViewController {
+class TImeLineTableViewController: TWTRTimelineViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print("here")
+        self.dataSource = TWTRUserTimelineDataSource(screenName: "tosh_lit", apiClient: TWTRAPIClient())
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {

@@ -15,13 +15,11 @@ class StartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
-        
         let logInButton = TWTRLogInButton(logInCompletion: { session, error in
             if (session != nil) {
-                print("signed in as \(session?.userName)");
+                print("signed in as \(String(describing: session?.userName))")
             } else {
-                print("error: \(error?.localizedDescription)");
+                print("error: \(String(describing: error?.localizedDescription))");
             }
         })
         logInButton.center = self.view.center
@@ -30,15 +28,28 @@ class StartViewController: UIViewController {
         
         TWTRTwitter.sharedInstance().logIn(completion: { (session, error) in
             if (session != nil) {
-                print("signed in as \(session?.userName)");
+                print("signed in as \(String(describing: session?.userName))")
             } else {
-                print("error: \(error?.localizedDescription)");
+                print("error: \(String(describing: error?.localizedDescription))")
             }
         })
+
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         return TWTRTwitter.sharedInstance().application(app, open: url, options: options)
+    }
+    
+    func getEmailAdress() {
+//        let client = TWTRAPIClient.withCurrentUser()
+//
+//        client.requestEmail { email, error in
+//            if (email != nil) {
+//                print("signed in as \(session.userName)");
+//            } else {
+//                print("error: \(error.localizedDescription)");
+//            }
+//        }
     }
     
     
