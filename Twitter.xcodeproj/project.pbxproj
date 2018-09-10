@@ -21,7 +21,7 @@
 		2B4B3F4C2140EDF800FFD636 /* TimeLineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4B3F4B2140EDF800FFD636 /* TimeLineTableViewController.swift */; };
 		2B4B3F4F2140EE4000FFD636 /* TImeLineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4B3F4D2140EE4000FFD636 /* TImeLineTableViewCell.swift */; };
 		2B4B3F502140EE4000FFD636 /* TImeLineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B4B3F4E2140EE4000FFD636 /* TImeLineTableViewCell.xib */; };
-		2B9F9E302142317200E26BC6 /* StartViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B9F9E2F2142317200E26BC6 /* StartViewController.storyboard */; };
+		2B4D178E2146D68B006CBD36 /* StartViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B4D178D2146D68B006CBD36 /* StartViewController.storyboard */; };
 		2B9F9E322142319300E26BC6 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9F9E312142319300E26BC6 /* StartViewController.swift */; };
 		2BE0E4E7214396CB0011BB4D /* SingleTweetViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BE0E4E6214396CB0011BB4D /* SingleTweetViewController.storyboard */; };
 		2BE0E4E9214396F10011BB4D /* SngleTweetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE0E4E8214396F10011BB4D /* SngleTweetViewController.swift */; };
@@ -74,7 +74,7 @@
 		2B4B3F4B2140EDF800FFD636 /* TimeLineTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineTableViewController.swift; sourceTree = "<group>"; };
 		2B4B3F4D2140EE4000FFD636 /* TImeLineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TImeLineTableViewCell.swift; sourceTree = "<group>"; };
 		2B4B3F4E2140EE4000FFD636 /* TImeLineTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TImeLineTableViewCell.xib; sourceTree = "<group>"; };
-		2B9F9E2F2142317200E26BC6 /* StartViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StartViewController.storyboard; sourceTree = "<group>"; };
+		2B4D178D2146D68B006CBD36 /* StartViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StartViewController.storyboard; sourceTree = "<group>"; };
 		2B9F9E312142319300E26BC6 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		2BE0E4E6214396CB0011BB4D /* SingleTweetViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SingleTweetViewController.storyboard; sourceTree = "<group>"; };
 		2BE0E4E8214396F10011BB4D /* SngleTweetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SngleTweetViewController.swift; sourceTree = "<group>"; };
@@ -246,7 +246,7 @@
 		2B9F9E2E2142314C00E26BC6 /* Start */ = {
 			isa = PBXGroup;
 			children = (
-				2B9F9E2F2142317200E26BC6 /* StartViewController.storyboard */,
+				2B4D178D2146D68B006CBD36 /* StartViewController.storyboard */,
 				2B9F9E312142319300E26BC6 /* StartViewController.swift */,
 			);
 			path = Start;
@@ -385,9 +385,9 @@
 			files = (
 				2B4B3F502140EE4000FFD636 /* TImeLineTableViewCell.xib in Resources */,
 				2B4B3F482140ED9900FFD636 /* ProfileViewController.storyboard in Resources */,
+				2B4D178E2146D68B006CBD36 /* StartViewController.storyboard in Resources */,
 				2B4B3F232140D6F700FFD636 /* Assets.xcassets in Resources */,
 				2B4B3F462140ED7100FFD636 /* TimeLineTableViewController.storyboard in Resources */,
-				2B9F9E302142317200E26BC6 /* StartViewController.storyboard in Resources */,
 				2BE0E4E7214396CB0011BB4D /* SingleTweetViewController.storyboard in Resources */,
 				2B4B3F402140EC6A00FFD636 /* TabBarViewController.storyboard in Resources */,
 				2B4B3F222140D6F700FFD636 /* LaunchScreen.storyboard in Resources */,
