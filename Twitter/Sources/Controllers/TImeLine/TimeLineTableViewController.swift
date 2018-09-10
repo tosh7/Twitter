@@ -9,21 +9,12 @@
 import UIKit
 import TwitterKit
 
+
 class TImeLineTableViewController: TWTRTimelineViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("here")
+        
         self.dataSource = TWTRUserTimelineDataSource(screenName: "tosh_lit", apiClient: TWTRAPIClient())
-    }
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
     }
 }
