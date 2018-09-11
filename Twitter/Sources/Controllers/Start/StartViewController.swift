@@ -40,10 +40,10 @@ class StartViewController: UIViewController {
             let apiClient = TWTRAPIClient(userID: session?.userID)
             let request = apiClient.urlRequest(
                 withMethod: "GET",
-                urlString: "https://api.twitter.com/1.1/statuses/user_timeline.json",
+                urlString: "https://api.twitter.com/1.1/statuses/home_timeline.json",
                 parameters: [
                     "user_id": session?.userID,
-                    "count": "1", // Intで10を渡すとエラーになる模様で、文字列にしてやる必要がある
+                    "count": "10", // Intで10を渡すとエラーになる模様で、文字列にしてやる必要がある
                 ],
                 error: &clientError
             )
@@ -52,6 +52,8 @@ class StartViewController: UIViewController {
                 if let error = error {
                     print(error.localizedDescription)
                 } else if let data = data, let json = String(data: data, encoding: .utf8) {
+                    print("")
+                    print("")
                     print("")
                     print(json)
                 }
