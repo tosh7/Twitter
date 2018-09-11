@@ -10,11 +10,10 @@ import UIKit
 import TwitterKit
 
 
-class TImeLineTableViewController: TWTRTimelineViewController {
+class TImeLineTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.dataSource = TWTRUserTimelineDataSource(screenName: "tosh_lit", apiClient: TWTRAPIClient())
     }
 }

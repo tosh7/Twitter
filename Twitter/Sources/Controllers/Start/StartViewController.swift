@@ -43,7 +43,7 @@ class StartViewController: UIViewController {
                 urlString: "https://api.twitter.com/1.1/statuses/home_timeline.json",
                 parameters: [
                     "user_id": session?.userID,
-                    "count": "10", // Intで10を渡すとエラーになる模様で、文字列にしてやる必要がある
+                    "count": "1", // Intで10を渡すとエラーになる模様で、文字列にしてやる必要がある
                 ],
                 error: &clientError
             )
