@@ -10,7 +10,6 @@ import UIKit
 
 class TImeLineTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var iconImage: UIImageView!
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var userID: UILabel!
     @IBOutlet weak var tweetText: UILabel!
@@ -20,6 +19,12 @@ class TImeLineTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        userName.text = "userName"
+        userID.text = "UserID"
+        tweetText.text = "Tweet"
+        numberOfLikes.text = "3"
+        numberOfRetweets.text = "6"
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
