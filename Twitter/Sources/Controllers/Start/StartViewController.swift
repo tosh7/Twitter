@@ -63,6 +63,10 @@ class StartViewController: UIViewController {
                         for i in 0...9 {
                             let realmData = TweetObject()
                             
+                            let url = URL(string: (self.tweets[9 - i].user?.iconImageURL)!)
+                            let imageData = try?Data(contentsOf: url!)
+                            
+                            realmData.iconImageData = imageData!
                             realmData.userName = (self.tweets[9 - i].user?.name)!
                             realmData.userID = (self.tweets[9 - i].user?.userScreenName)!
                             realmData.tweet = (self.tweets[9 - i].text)!
@@ -77,12 +81,9 @@ class StartViewController: UIViewController {
                         print((self.tweets[0].user?.name)!)
                     }
                 }
-                
-//                DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-                    // 0.5秒後に実行したい処理
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
                     self.performSegue(withIdentifier: "toTimeLine", sender: nil)
-//                }
-                
+                }
             } else {
                 print("error: \(String(describing: error?.localizedDescription))")
             }
