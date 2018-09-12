@@ -18,6 +18,10 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="152.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8uc-vQ-mF2">
+                        <rect key="frame" x="0.0" y="11" width="75" height="75"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="userName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0XK-YS-990">
                         <rect key="frame" x="83" y="8" width="79" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -57,6 +61,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="iconImage" destination="8uc-vQ-mF2" id="JZ5-yR-7iJ"/>
                 <outlet property="numberOfLikes" destination="pCg-yY-OO7" id="QqU-g2-afd"/>
                 <outlet property="numberOfRetweets" destination="hlc-lZ-GyE" id="CwU-2b-37n"/>
                 <outlet property="tweetText" destination="nXP-RC-NvY" id="kc3-z7-yOH"/>
