@@ -9,6 +9,7 @@
 import UIKit
 import TwitterKit
 import TwitterCore
+import SwiftyJSON
 
 class StartViewController: UIViewController {
     
@@ -42,7 +43,7 @@ class StartViewController: UIViewController {
                 withMethod: "GET",
                 urlString: "https://api.twitter.com/1.1/statuses/home_timeline.json",
                 parameters: [
-                    "user_id": session?.userID,
+                    "user_id": session?.userID as Any,
                     "count": "10", // Intで10を渡すとエラーになる模様で、文字列にしてやる必要がある
                 ],
                 error: &clientError
