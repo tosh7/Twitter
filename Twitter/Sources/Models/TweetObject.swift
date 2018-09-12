@@ -7,3 +7,14 @@
 //
 
 import Foundation
+import RealmSwift
+
+class TweetObject: Object {
+    
+    @objc dynamic var userNeme = ""
+    @objc dynamic var userID = ""
+    @objc dynamic var tweet = ""
+    @objc dynamic var favoriteCount = 0
+    @objc dynamic var retweetCount = 0
+    
+}
