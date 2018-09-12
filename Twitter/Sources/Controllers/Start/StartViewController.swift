@@ -13,6 +13,9 @@ import SwiftyJSON
 
 class StartViewController: UIViewController {
     
+    var tweets: [Tweet] = []
+    var userInfo: [User] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -56,7 +59,10 @@ class StartViewController: UIViewController {
                     print("")
                     print("")
                     print("")
-                    print(json)
+//                    print(json)
+                    self.tweets = JSONParser.parse(data: data)
+                    print(self.tweets[0].text)
+                    
                 }
             }
         })

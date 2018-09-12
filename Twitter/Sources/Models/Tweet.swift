@@ -17,7 +17,7 @@ class Tweet {
     var retweetCount: Int!
     
     init(json: JSON) {
-        self.user = user(json: json["user"])
+        self.user = User(json: json["user"])
         self.text = json["text"].stringValue
         self.favoriteCount = json["favorite_count"].intValue
         self.retweetCount = json["retweet_count"].intValue

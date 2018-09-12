@@ -9,13 +9,13 @@
 import Foundation
 import SwiftyJSON
 
-class User {
+struct User {
     
     var name: String!
     var userScreenName: String!
     
     init(json: JSON){
-        self.userName = json["name"].stringValue
+        self.name = json["name"].stringValue
         self.userScreenName = json["screen_name"].stringValue
     }
 }
