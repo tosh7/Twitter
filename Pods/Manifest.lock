@@ -1,20 +1,24 @@
 PODS:
+  - SwiftyJSON (4.1.0)
   - TwitterCore (3.2.0)
   - TwitterKit (3.4.0):
     - TwitterCore (>= 3.1.0)
 
 DEPENDENCIES:
+  - SwiftyJSON
   - TwitterKit
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - SwiftyJSON
     - TwitterCore
     - TwitterKit
 
 SPEC CHECKSUMS:
+  SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
   TwitterCore: 8cbc9ad34d91c63a0035ea05bfbfc0d7ca72a28c
   TwitterKit: bc7bd086b9b724a1d888745a054e1d0b1ecc4f3f
 
-PODFILE CHECKSUM: 605aae88339ac568aca4cad5e08de843cabab387
+PODFILE CHECKSUM: d6d832e802d4e1383a291043624323dbfbe71bb1
 
 COCOAPODS: 1.5.3

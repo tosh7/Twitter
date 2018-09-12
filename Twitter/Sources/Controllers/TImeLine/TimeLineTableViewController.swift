@@ -17,6 +17,7 @@ class TImeLineTableViewController: UITableViewController {
         super.viewDidLoad()
         tableView.register(UINib(nibName: "TImeLineTableViewCell", bundle: nil),
                            forCellReuseIdentifier: "TweetCell")
+        tableView.rowHeight = 166
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
