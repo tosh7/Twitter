@@ -10,8 +10,11 @@ import UIKit
 import TwitterKit
 import TwitterCore
 import SwiftyJSON
+import RealmSwift
 
 class StartViewController: UIViewController {
+    
+    let realm = try! Realm()
     
     var tweets: [Tweet] = []
     var userInfo: [User] = []
@@ -56,6 +59,20 @@ class StartViewController: UIViewController {
                         print("")
                         print(json)
                         self.tweets = JSONParser.parse(data: data)
+                        
+                        for i in 0...9 {
+                            let realmData = TweetObject()
+                            
+                            realmData.userName = (self.tweets[9 - i].user?.name)!
+                            realmData.userID = (self.tweets[9 - i].user?.userScreenName)!
+                            realmData.tweet = (self.tweets[9 - i].text)!
+                            realmData.favoriteCount = (self.tweets[9 - i].favoriteCount)!
+                            realmData.retweetCount = (self.tweets[9 - i].retweetCount)!
+                            
+                            try! self.realm.write {
+                                self.realm.add(realmData)
+                            }
+                        }
                         print((self.tweets[0].text)!)
                         print((self.tweets[0].user?.name)!)
                     }

@@ -7,8 +7,13 @@
 //
 
 import UIKit
+import RealmSwift
 
 class TimeLineTableViewCell: UITableViewCell {
+    
+    let realm = try! Realm()
+    var tweetData: Results<TweetObject>!
+//    var number: Int!
     
     @IBOutlet weak var iconImage: UIImageView!
     @IBOutlet weak var userName: UILabel!
@@ -20,9 +25,18 @@ class TimeLineTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
+        tweetData = realm.objects(TweetObject.self)
+//
+        let number = tweetData.count + 1
+        userName.text = tweetData[number - self.tag].userName
     }
-
+    
+//    func setData(indexPath: IndexPath) {
+////        let number = tweetData.count
+//        let number = 20
+//        userName.text = tweetData[number - self.tag].userName
+//    }
+////
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

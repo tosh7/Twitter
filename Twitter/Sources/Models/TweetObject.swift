@@ -11,7 +11,7 @@ import RealmSwift
 
 class TweetObject: Object {
     
-    @objc dynamic var userNeme = ""
+    @objc dynamic var userName = ""
     @objc dynamic var userID = ""
     @objc dynamic var tweet = ""
     @objc dynamic var favoriteCount = 0
