@@ -13,12 +13,11 @@ class TimeLineTableViewCell: UITableViewCell {
     
     let realm = try! Realm()
     var tweetData: Results<TweetObject>!
-//    var number: Int!
     
     @IBOutlet weak var iconImage: UIImageView!
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var userID: UILabel!
-    @IBOutlet weak var tweetText: UILabel!
+    @IBOutlet weak var tweet: UITextView!
     @IBOutlet weak var numberOfRetweets: UILabel!
     @IBOutlet weak var numberOfLikes: UILabel!
 
@@ -30,9 +29,12 @@ class TimeLineTableViewCell: UITableViewCell {
     
     func setData(indexPath: IndexPath) {
         let number = tweetData.count
+        let image = UIImage(data: tweetData[number - indexPath.row - 1].iconImageData)
+        
+        iconImage.image = image
         userName.text = tweetData[number - indexPath.row - 1].userName
         userID.text = tweetData[number - indexPath.row - 1].userID
-        tweetText.text = tweetData[number - indexPath.row - 1].tweet
+        tweet.text = tweetData[number - indexPath.row - 1].tweet
         numberOfLikes.text = String(tweetData[number - indexPath.row - 1].favoriteCount)
         numberOfRetweets.text = String(tweetData[number - indexPath.row - 1].retweetCount)
     }

@@ -11,6 +11,7 @@ import RealmSwift
 
 class TweetObject: Object {
     
+    @objc dynamic var iconImageData = Data()
     @objc dynamic var userName = ""
     @objc dynamic var userID = ""
     @objc dynamic var tweet = ""

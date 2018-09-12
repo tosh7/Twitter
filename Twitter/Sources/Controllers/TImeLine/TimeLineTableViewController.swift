@@ -11,8 +11,6 @@ import TwitterKit
 
 class TimeLineTableViewController: UITableViewController {
     
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: "TimeLineTableViewCell", bundle: nil),
