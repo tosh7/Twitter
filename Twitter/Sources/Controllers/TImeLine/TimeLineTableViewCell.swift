@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TImeLineTableViewCell: UITableViewCell {
+class TimeLineTableViewCell: UITableViewCell {
     
     @IBOutlet weak var iconImage: UIImageView!
     @IBOutlet weak var userName: UILabel!
