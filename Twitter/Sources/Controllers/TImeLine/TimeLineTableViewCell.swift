@@ -26,17 +26,17 @@ class TimeLineTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         tweetData = realm.objects(TweetObject.self)
-//
-        let number = tweetData.count + 1
-        userName.text = tweetData[number - self.tag].userName
     }
     
-//    func setData(indexPath: IndexPath) {
-////        let number = tweetData.count
-//        let number = 20
-//        userName.text = tweetData[number - self.tag].userName
-//    }
-////
+    func setData(indexPath: IndexPath) {
+        let number = tweetData.count
+        userName.text = tweetData[number - indexPath.row - 1].userName
+        userID.text = tweetData[number - indexPath.row - 1].userID
+        tweetText.text = tweetData[number - indexPath.row - 1].tweet
+        numberOfLikes.text = String(tweetData[number - indexPath.row - 1].favoriteCount)
+        numberOfRetweets.text = String(tweetData[number - indexPath.row - 1].retweetCount)
+    }
+
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
