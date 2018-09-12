@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0940"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4349F79914F509B5764180CDEEBD5625"
+               BlueprintIdentifier = "03ECD2987588D86A6AEA4A84E17A3B58"
                BuildableName = "Pods_TwitterUITests.framework"
                BlueprintName = "Pods-TwitterUITests"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4349F79914F509B5764180CDEEBD5625"
+            BlueprintIdentifier = "03ECD2987588D86A6AEA4A84E17A3B58"
             BuildableName = "Pods_TwitterUITests.framework"
             BlueprintName = "Pods-TwitterUITests"
             ReferencedContainer = "container:Pods.xcodeproj">

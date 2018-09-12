@@ -6,6 +6,7 @@ target 'Twitter' do
   use_frameworks!
 pod 'TwitterKit'
 pod 'SwiftyJSON'
+pod 'RealmSwift'
   # Pods for Twitter
 
   target 'TwitterTests' do
