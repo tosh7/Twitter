@@ -78,7 +78,11 @@ class StartViewController: UIViewController {
                     }
                 }
                 
-                self.performSegue(withIdentifier: "toTimeLine", sender: nil)
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+                    // 0.5秒後に実行したい処理
+                    self.performSegue(withIdentifier: "toTimeLine", sender: nil)
+//                }
+                
             } else {
                 print("error: \(String(describing: error?.localizedDescription))")
             }

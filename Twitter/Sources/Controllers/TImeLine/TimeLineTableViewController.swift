@@ -27,9 +27,8 @@ class TimeLineTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // セルを取得
         let cell = tableView.dequeueReusableCell(withIdentifier: "TweetCell") as! TimeLineTableViewCell
-         cell.tag = indexPath.row
         // セルに値を設定
-//        cell.setData(indexPath: indexPath)
+        cell.setData(indexPath: indexPath)
         
         return cell
     }
