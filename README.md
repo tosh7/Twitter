@@ -19,3 +19,6 @@ TimeLineViewCellでRealmから値を取ってきてCellに入れるようにし�
 
 ## 実機での動作動画
 ![](https://media.giphy.com/media/kPIeuTEeQbM9uULrr8/giphy.gif)
+
+## 注意点
+レポジトリをprivateからPublicにするにあたり、APIキーの部分は空欄にしています。
