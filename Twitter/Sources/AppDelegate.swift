@@ -14,8 +14,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
+    var consumer_key: String = ""
+    var consumer_secret: String = ""
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        TWTRTwitter.sharedInstance().start(withConsumerKey:"", consumerSecret:"")
+        TWTRTwitter.sharedInstance().start(withConsumerKey:"iY4lPbxV56mmcBRTgrQaIhpYQ", consumerSecret:"Z4M1C7wRQiJuMuy8xwip5ArxNcWD1E6XqnhcJ7j0btPfbKEy5r")
         return true
     }
     

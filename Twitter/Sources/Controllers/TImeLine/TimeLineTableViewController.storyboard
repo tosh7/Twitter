@@ -23,6 +23,12 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="foc-FK-uO6" id="4ub-CP-dlx">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="90.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="twtr-share.png" translatesAutoresizingMaskIntoConstraints="NO" id="wYo-0p-lcs">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -37,4 +43,7 @@
             <point key="canvasLocation" x="32.799999999999997" y="142.57871064467767"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="twtr-share.png" width="14" height="15"/>
+    </resources>
 </document>
