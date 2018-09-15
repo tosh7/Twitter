@@ -18,7 +18,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var consumer_secret: String = ""
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        TWTRTwitter.sharedInstance().start(withConsumerKey:"iY4lPbxV56mmcBRTgrQaIhpYQ", consumerSecret:"Z4M1C7wRQiJuMuy8xwip5ArxNcWD1E6XqnhcJ7j0btPfbKEy5r")
+        
+        if let url = Bundle.main.url(forResource:"Twitter", withExtension: "plist") {
+            do {
+                let data = try Data(contentsOf:url)
+                let swiftDictionary = try PropertyListSerialization.propertyList(from: data, options: [], format: nil) as! [String:Any]
+                consumer_key = swiftDictionary["consumer_key"] as! String
+                consumer_secret = swiftDictionary["consumer_secret"] as! String
+            } catch {
+                print(error)
+            }
+        }
+        TWTRTwitter.sharedInstance().start(withConsumerKey: consumer_key, consumerSecret: consumer_secret)
         return true
     }
     
