@@ -21,4 +21,6 @@ TimeLineViewCellでRealmから値を取ってきてCellに入れるようにし�
 ![](https://media.giphy.com/media/kPIeuTEeQbM9uULrr8/giphy.gif)
 
 ## 注意点
-レポジトリをprivateからPublicにするにあたり、APIキーの部分は空欄にしています。
+レポジトリをprivateからPublicにするにあたり、`Twitter.plist`から、APIkeyとAPISeretKey取ってく量に設定を変更しました。  
+仕様としては、`Twitter.plist`は`.gitignore`の中に入っているのでプロジェクトファイルの`Twitter2.plist`を`Twitter.plist`に変更し
+その中にAPIKeyとAPISecretKeyを入れて実行してください。
