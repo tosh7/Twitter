@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2B08F7CC21492A3600069BD2 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B08F7CB21492A3600069BD2 /* Tweet.swift */; };
 		2B0D6546214CEB5500F8D870 /* Twitter.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2B0D6545214CEB5500F8D870 /* Twitter.plist */; };
+		2B0D6548214CF14900F8D870 /* Twitter2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2B0D6547214CF14900F8D870 /* Twitter2.plist */; };
 		2B4B3F022140D62100FFD636 /* TwitterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4B3F012140D62100FFD636 /* TwitterTests.swift */; };
 		2B4B3F0D2140D62100FFD636 /* TwitterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4B3F0C2140D62100FFD636 /* TwitterUITests.swift */; };
 		2B4B3F222140D6F700FFD636 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B4B3F1B2140D6F700FFD636 /* LaunchScreen.storyboard */; };
@@ -56,6 +57,7 @@
 		2AE3EC67E0798187B66D0524 /* Pods-TwitterUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TwitterUITests/Pods-TwitterUITests.release.xcconfig"; sourceTree = "<group>"; };
 		2B08F7CB21492A3600069BD2 /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		2B0D6545214CEB5500F8D870 /* Twitter.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Twitter.plist; sourceTree = "<group>"; };
+		2B0D6547214CF14900F8D870 /* Twitter2.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Twitter2.plist; sourceTree = "<group>"; };
 		2B4B3EE92140D61F00FFD636 /* Twitter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Twitter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B4B3EFD2140D62100FFD636 /* TwitterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TwitterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B4B3F012140D62100FFD636 /* TwitterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterTests.swift; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 				2B4B3F1C2140D6F700FFD636 /* Assets.xcassets */,
 				2B4B3F1D2140D6F700FFD636 /* info.plist */,
 				2B0D6545214CEB5500F8D870 /* Twitter.plist */,
+				2B0D6547214CF14900F8D870 /* Twitter2.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -386,6 +389,7 @@
 				2B0D6546214CEB5500F8D870 /* Twitter.plist in Resources */,
 				2B4D178E2146D68B006CBD36 /* StartViewController.storyboard in Resources */,
 				2B4B3F232140D6F700FFD636 /* Assets.xcassets in Resources */,
+				2B0D6548214CF14900F8D870 /* Twitter2.plist in Resources */,
 				2B4B3F462140ED7100FFD636 /* TimeLineTableViewController.storyboard in Resources */,
 				2B4B3F402140EC6A00FFD636 /* TabBarViewController.storyboard in Resources */,
 				2B4B3F222140D6F700FFD636 /* LaunchScreen.storyboard in Resources */,
