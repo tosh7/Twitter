@@ -13,7 +13,11 @@ class TimeLineTableViewCell: UITableViewCell {
     @IBOutlet weak var iconImage: UIImageView!
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var userID: UILabel!
-    @IBOutlet weak var tweet: UITextView!
+    @IBOutlet weak var tweet: UITextView!{
+        didSet {
+            tweet.isEditable = false
+        }
+    }
     @IBOutlet weak var numberOfRetweets: UILabel!
     @IBOutlet weak var numberOfLikes: UILabel!
 
