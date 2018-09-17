@@ -70,8 +70,8 @@ class StartViewController: UIViewController {
                             realmData.userName = (self.tweets[9 - i].user?.name)!
                             realmData.userID = (self.tweets[9 - i].user?.userScreenName)!
                             realmData.tweet = (self.tweets[9 - i].text)!
-                            realmData.favoriteCount = (self.tweets[9 - i].favoriteCount)!
-                            realmData.retweetCount = (self.tweets[9 - i].retweetCount)!
+                            realmData.favoriteCount = self.tweets[9 - i].favoriteCount
+                            realmData.retweetCount = self.tweets[9 - i].retweetCount
                             
                             try! self.realm.write {
                                 self.realm.add(realmData)
