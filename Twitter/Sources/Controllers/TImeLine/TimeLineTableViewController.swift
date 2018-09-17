@@ -34,15 +34,8 @@ class TimeLineTableViewController: UITableViewController {
         // セルに値を設定
         let rowNumber = tweetData.count - indexPath.row - 1
         
-//        guard let _iconImageData = tweetData[rowNumber].iconImageData,
-//            let _userName = tweetData[rowNumber].userName,
-//            let _userID = tweetData[rowNumber].userID,
-//            let _tweet = tweetData[rowNumber].tweet
-//            else {
-//                print("error")
-//                return cell
-//        }
         guard  let _tweetData = tweetData else {
+            print("error")
             return cell
         }
     
@@ -51,9 +44,8 @@ class TimeLineTableViewController: UITableViewController {
         cell.userName.text = _tweetData[rowNumber].userName
         cell.userID.text = _tweetData[rowNumber].userID
         cell.tweet.text = _tweetData[rowNumber].tweet
-        cell.numberOfLikes.text = String(_tweetData[rowNumber].favoriteCount)
-        cell.numberOfRetweets.text = String(_tweetData[rowNumber].retweetCount)
-        
+        cell.numberOfLikes.text = "\(_tweetData[rowNumber].favoriteCount) Likes"
+        cell.numberOfRetweets.text = "\(_tweetData[rowNumber].retweetCount) Retweets"
         
         return cell
     }
