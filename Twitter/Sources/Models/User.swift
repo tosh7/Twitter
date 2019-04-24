@@ -7,17 +7,16 @@
 //
 
 import Foundation
-import SwiftyJSON
 
-struct User {
+struct User: Codable {
     
-    var name: String!
-    var userScreenName: String!
-    var iconImageURL: String!
+    var name: String
+    var userScreenName: String?
+    var iconImageURL: String?
     
-    init(json: JSON){
-        self.name = json["name"].stringValue
-        self.userScreenName = json["screen_name"].stringValue
-        self.iconImageURL = json["profile_image_url_https"].stringValue
+    private enum CodingKeys: String, CodingKey {
+        case name
+        case userScreenName = "screen_name"
+        case iconImageURL =  "profile_image_url_https"
     }
 }
