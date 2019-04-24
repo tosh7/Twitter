@@ -7,19 +7,18 @@
 //
 
 import Foundation
-import SwiftyJSON
 
-class Tweet {
+struct Tweet: Codable {
     
-    var user: User?
-    var text: String!
-    var favoriteCount: Int!
-    var retweetCount: Int!
+    var user: User
+    var text: String
+    var favoriteCount: Int
+    var retweetCount: Int
     
-    init(json: JSON) {
-        self.user = User(json: json["user"])
-        self.text = json["text"].stringValue
-        self.favoriteCount = json["favorite_count"].intValue
-        self.retweetCount = json["retweet_count"].intValue
+    private enum CodingKeys: String, CodingKey {
+        case user
+        case text
+        case favoriteCount = "favorite_count"
+        case retweetCount = "retweet_count"
     }
 }
