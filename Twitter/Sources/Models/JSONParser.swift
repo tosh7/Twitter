@@ -7,15 +7,16 @@
 //
 
 import Foundation
-import SwiftyJSON
 
 struct JSONParser {
     static func parse(data: Data) -> [Tweet] {
-        print("parse start!")
-        let json = JSON(data)
         
-        let timeline: [Tweet] = json.arrayValue.map({ Tweet(json: $0) })
-        
-        return timeline
+        var tweets:[Tweet] = []
+        do {
+            tweets = try JSONDecoder().decode([Tweet].self, from: data)
+        } catch {
+            print(error.localizedDescription)
+        }
+        return tweets
     }
 }

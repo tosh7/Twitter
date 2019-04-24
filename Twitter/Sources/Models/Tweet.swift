@@ -12,8 +12,8 @@ struct Tweet: Codable {
     
     var user: User
     var text: String
-    var favoriteCount: Int
-    var retweetCount: Int
+    var favoriteCount: Int?
+    var retweetCount: Int?
     
     private enum CodingKeys: String, CodingKey {
         case user
