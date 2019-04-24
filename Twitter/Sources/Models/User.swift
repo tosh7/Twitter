@@ -11,12 +11,7 @@ import Foundation
 struct User: Codable {
     
     var name: String
-    var userScreenName: String?
-    var iconImageURL: String?
+    var screenName: String?
+    var profileImageUrlHttps: String?
     
-    private enum CodingKeys: String, CodingKey {
-        case name
-        case userScreenName = "screen_name"
-        case iconImageURL =  "profile_image_url_https"
-    }
 }
