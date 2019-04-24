@@ -44,7 +44,7 @@ final class StartViewController: UIViewController {
                     urlString: "https://api.twitter.com/1.1/statuses/home_timeline.json",
                     parameters: [
                         "user_id": session?.userID as Any,
-                        "count": "10",
+                        "count": "11",
                         ],
                     error: &clientError
                 )
