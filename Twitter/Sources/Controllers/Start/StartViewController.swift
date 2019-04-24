@@ -59,15 +59,15 @@ final class StartViewController: UIViewController {
                         for i in 0...9 {
                             let realmData = TweetObject()
                             
-                            let url = URL(string: (self.tweets[9 - i].user.iconImageURL!))
-                            let imageData = try?Data(contentsOf: url!)
+                            let url = URL(string: (self.tweets[9 - i].user.profileImageUrlHttps!))
+                            let imageData = try? Data(contentsOf: url!)
                             
                             realmData.iconImageData = imageData!
                             realmData.userName = (self.tweets[9 - i].user.name)
-                            realmData.userID = (self.tweets[9 - i].user.userScreenName)
+                            realmData.userID = (self.tweets[9 - i].user.profileImageUrlHttps)
                             realmData.tweet = (self.tweets[9 - i].text)
-                            realmData.favoriteCount = self.tweets[9 - i].favoriteCount ?? 0
-                            realmData.retweetCount = self.tweets[9 - i].retweetCount ?? 0
+                            realmData.favoriteCount = self.tweets[9 - i].favoriteCount
+                            realmData.retweetCount = self.tweets[9 - i].retweetCount
                             
                             try! self.realm.write {
                                 self.realm.add(realmData)

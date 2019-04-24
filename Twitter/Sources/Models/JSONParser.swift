@@ -12,8 +12,12 @@ struct JSONParser {
     static func parse(data: Data) -> [Tweet] {
         
         var tweets:[Tweet] = []
+        
+        let jsonDecoder = JSONDecoder()
+        jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
+        
         do {
-            tweets = try JSONDecoder().decode([Tweet].self, from: data)
+            tweets = try jsonDecoder.decode([Tweet].self, from: data)
         } catch {
             print(error.localizedDescription)
         }
