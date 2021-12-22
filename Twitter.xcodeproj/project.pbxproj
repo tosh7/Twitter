@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19FC9E1D277372F60050B305 /* Twitter.plist in Resources */ = {isa = PBXBuildFile; fileRef = 19FC9E1C277372F60050B305 /* Twitter.plist */; };
 		2B08F7CC21492A3600069BD2 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B08F7CB21492A3600069BD2 /* Tweet.swift */; };
-		2B0D6546214CEB5500F8D870 /* Twitter.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2B0D6545214CEB5500F8D870 /* Twitter.plist */; };
 		2B0D6548214CF14900F8D870 /* Twitter2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2B0D6547214CF14900F8D870 /* Twitter2.plist */; };
 		2B1479172271CB4E00C5AFCA /* TwitterServerAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1479162271CB4E00C5AFCA /* TwitterServerAccess.swift */; };
 		2B1479192271E4FA00C5AFCA /* TwitterAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1479182271E4FA00C5AFCA /* TwitterAPI.swift */; };
@@ -54,11 +54,11 @@
 
 /* Begin PBXFileReference section */
 		0480D068A24DEF709EC97260 /* Pods_Twitter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Twitter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		19FC9E1C277372F60050B305 /* Twitter.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Twitter.plist; sourceTree = "<group>"; };
 		1ADB322574F1D0F5551C6359 /* Pods-Twitter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Twitter.release.xcconfig"; path = "Pods/Target Support Files/Pods-Twitter/Pods-Twitter.release.xcconfig"; sourceTree = "<group>"; };
 		1FF25324C3C79DB180CC2A16 /* Pods_TwitterTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TwitterTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AE3EC67E0798187B66D0524 /* Pods-TwitterUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TwitterUITests/Pods-TwitterUITests.release.xcconfig"; sourceTree = "<group>"; };
 		2B08F7CB21492A3600069BD2 /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
-		2B0D6545214CEB5500F8D870 /* Twitter.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Twitter.plist; sourceTree = "<group>"; };
 		2B0D6547214CF14900F8D870 /* Twitter2.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Twitter2.plist; sourceTree = "<group>"; };
 		2B1479162271CB4E00C5AFCA /* TwitterServerAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterServerAccess.swift; sourceTree = "<group>"; };
 		2B1479182271E4FA00C5AFCA /* TwitterAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterAPI.swift; sourceTree = "<group>"; };
@@ -178,8 +178,8 @@
 				2B4B3F1B2140D6F700FFD636 /* LaunchScreen.storyboard */,
 				2B4B3F1C2140D6F700FFD636 /* Assets.xcassets */,
 				2B4B3F1D2140D6F700FFD636 /* info.plist */,
-				2B0D6545214CEB5500F8D870 /* Twitter.plist */,
 				2B0D6547214CF14900F8D870 /* Twitter2.plist */,
+				19FC9E1C277372F60050B305 /* Twitter.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -392,12 +392,12 @@
 			files = (
 				2B4B3F502140EE4000FFD636 /* TimeLineTableViewCell.xib in Resources */,
 				2B4B3F482140ED9900FFD636 /* ProfileViewController.storyboard in Resources */,
-				2B0D6546214CEB5500F8D870 /* Twitter.plist in Resources */,
 				2B4D178E2146D68B006CBD36 /* StartViewController.storyboard in Resources */,
 				2B4B3F232140D6F700FFD636 /* Assets.xcassets in Resources */,
 				2B0D6548214CF14900F8D870 /* Twitter2.plist in Resources */,
 				2B4B3F462140ED7100FFD636 /* TimeLineTableViewController.storyboard in Resources */,
 				2B4B3F402140EC6A00FFD636 /* TabBarViewController.storyboard in Resources */,
+				19FC9E1D277372F60050B305 /* Twitter.plist in Resources */,
 				2B4B3F222140D6F700FFD636 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
