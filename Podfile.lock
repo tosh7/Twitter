@@ -1,13 +1,13 @@
 PODS:
-  - Realm (3.7.6):
-    - Realm/Headers (= 3.7.6)
-  - Realm/Headers (3.7.6)
-  - RealmSwift (3.7.6):
-    - Realm (= 3.7.6)
-  - SwiftyJSON (4.1.0)
+  - Realm (10.20.1):
+    - Realm/Headers (= 10.20.1)
+  - Realm/Headers (10.20.1)
+  - RealmSwift (10.20.1):
+    - Realm (= 10.20.1)
+  - SwiftyJSON (5.0.1)
   - TwitterCore (3.2.0)
-  - TwitterKit (3.4.0):
-    - TwitterCore (>= 3.1.0)
+  - TwitterKit (3.4.2):
+    - TwitterCore (>= 3.2.0)
 
 DEPENDENCIES:
   - RealmSwift
@@ -15,7 +15,7 @@ DEPENDENCIES:
   - TwitterKit
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - Realm
     - RealmSwift
     - SwiftyJSON
@@ -23,12 +23,12 @@ SPEC REPOS:
     - TwitterKit
 
 SPEC CHECKSUMS:
-  Realm: 9eaecad54712d6246d08ba34c10f354e4715d7d3
-  RealmSwift: 1fe08b4ebaeeaacf17f9ba0343f7b25c9fc31fa6
-  SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
+  Realm: fac5ecd031fcb81171627b74944c885662d4b266
+  RealmSwift: 9b02d25acb46a14756bde9893abb99e2e3675923
+  SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
   TwitterCore: 8cbc9ad34d91c63a0035ea05bfbfc0d7ca72a28c
-  TwitterKit: bc7bd086b9b724a1d888745a054e1d0b1ecc4f3f
+  TwitterKit: 5e4f41d70b9abdb41df5467f52d7aa2c0fd26ebb
 
 PODFILE CHECKSUM: 7a088725eeb5942bba5326c17a4bb1bf6758ed05
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.11.2
