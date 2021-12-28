@@ -22,3 +22,7 @@ TBD
 
 ## How it works
 TBD
+
+## Special Thanks
+For the api client part, this project's codes is refrenced. 
+https://github.com/kean/Get 
