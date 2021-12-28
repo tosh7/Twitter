@@ -4,7 +4,7 @@
 ![](https://img.shields.io/badge/Swift-5.5.2%2B-orange.svg)  
 
 Using Twitter api, get tweets from your time line.
-This App is also made by Swift Concurency.
+This App is also made by Swift Concurrency.
 
 ## Libraries
 - RealmSwift
