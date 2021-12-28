@@ -1,26 +1,24 @@
-# Twitterのクライアントアプリ
+# iOS client app for Twitter
+![](https://img.shields.io/badge/Xcode-13.2.1%2B-blue.svg)
+![](https://img.shields.io/badge/iOS-13.0%2B-blue.svg)
+![](https://img.shields.io/badge/Swift-5.5.2%2B-orange.svg)  
 
-Twitterのアカウントでログインをして、タイムラインを取得してくるアプリです。
+Using Twitter api, get tweets from your time line.
+This App is also made by Swift Concurency.
 
-## 使用しているライブラリ
-- TwitterKit
-- SwiftyJSON
+## Libraries
 - RealmSwift
 
-全てcocoapodsを使用
+All libraries is installed via Cocoapods.
 
-## アプリの動作説明
-StartViewControllerでログイン管理をし、そこでタイムラインの情報を10件取得してきています。
-そのまま、ここでRealmをしようし保存しています。
+## How to start
+1. Clone this repository.
+2. Make `Twitter.plist`, which sould be same list as `Twitter2.plist`, and set Twitter API's APIKey and APISecretKey.
 
-TimeLineViewCellでRealmから値を取ってきてCellに入れるようにしています。
+`Twitter.plist` is already added in `.gitignore` file for the security.
 
-アーキテクチャがあまり綺麗にできていなく無駄が多いので、ここの部分をもう少し変更したいと考えています。
+## How to use
+TBD
 
-## 実機での動作動画
-![](https://media.giphy.com/media/kPIeuTEeQbM9uULrr8/giphy.gif)
-
-## 注意点
-レポジトリをprivateからPublicにするにあたり、`Twitter.plist`から、APIkeyとAPISeretKey取ってく量に設定を変更しました。  
-仕様としては、`Twitter.plist`は`.gitignore`の中に入っているのでプロジェクトファイルの`Twitter2.plist`を`Twitter.plist`に変更し
-その中にAPIKeyとAPISecretKeyを入れて実行してください。
+## How it works
+TBD
