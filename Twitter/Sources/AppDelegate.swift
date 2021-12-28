@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import TwitterKit
+//import TwitterKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -29,12 +29,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print(error)
             }
         }
-        TWTRTwitter.sharedInstance().start(withConsumerKey: consumer_key, consumerSecret: consumer_secret)
+//        TWTRTwitter.sharedInstance().start(withConsumerKey: consumer_key, consumerSecret: consumer_secret)
         return true
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-        return TWTRTwitter.sharedInstance().application(app, open: url, options: options)
+//        return TWTRTwitter.sharedInstance().application(app, open: url, options: options)
+        return true
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

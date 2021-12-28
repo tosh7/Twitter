@@ -7,12 +7,12 @@
 //
 
 import Foundation
-import TwitterKit
+//import TwitterKit
 
 struct TwitterAPI {
 
     static var userId: String!
-    static var apiClient: TWTRAPIClient!
+//    static var apiClient: TWTRAPIClient!
     static var request: URLRequest!
 
     static func setUp () {
