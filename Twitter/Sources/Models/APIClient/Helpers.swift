@@ -105,7 +105,7 @@ final class DataLoader: NSObject, URLSessionDelegate {
         }
     }
 
-    func urlSession(_ session: URLSession, task: URLSessionDataTask, didFinishCollectiong metrics: URLSessionTaskMetrics) {
+    func urlSession(_ session: URLSession, task: URLSessionTask, didFinishCollectiong metrics: URLSessionTaskMetrics) {
         handlers[task]?.metrics = metrics
     }
 
@@ -147,6 +147,35 @@ final class URLSessionProxyDelegate: NSObject, URLSessionTaskDelegate, URLSessio
             #selector(URLSessionDataDelegate.urlSession(_:task:didCompleteWithError:)),
             #selector(URLSessionDataDelegate.urlSession(_:task:didFinishCollecting:))
         ]
+    }
+
+    // MARK: URLSessionDelegate
+
+    func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive data: Data) {
+        loader.urlSession(session, dataTask: dataTask, didRecieve: data)
+        (delegate as? URLSessionDataDelegate)?.urlSession?(session, dataTask: dataTask, didReceive: data)
+    }
+
+    func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
+        loader.urlSession(session, task: task, didCompleteWithError: error)
+        (delegate as? URLSessionDataDelegate)?.urlSession?(session, task: task, didCompleteWithError: error)
+    }
+
+    func urlSession(_ session: URLSession, task: URLSessionTask, didFinishCollecting metrics: URLSessionTaskMetrics) {
+        loader.urlSession(session, task: task, didFinishCollectiong: metrics)
+        (delegate as? URLSessionDataDelegate)?.urlSession?(session, task: task, didFinishCollecting: metrics)
+    }
+
+    // MARK: Proxy
+    override func responds(to aSelector: Selector!) -> Bool {
+        if interceptedSelectors.contains(aSelector) {
+            return true
+        }
+        return delegate.responds(to: aSelector) || super.responds(to: aSelector)
+    }
+
+    override func forwardingTarget(for selector: Selector!) -> Any? {
+        interceptedSelectors.contains(selector) ? nil : delegate
     }
 }
 
