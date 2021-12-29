@@ -4,6 +4,40 @@
 
 import Foundation
 
+struct AnyEncodable: Encodable {
+    private let value: Encodable
+
+    init(_ value: Encodable) {
+        self.value = value
+    }
+
+    func encode(to encoder: Encoder) throws {
+        try value.encode(to: encoder)
+    }
+}
+
+extension URLRequest {
+    func cURLDescription() -> String {
+        guard let url = url, let method = httpMethod else {
+            return "$ curl command generation failed"
+        }
+        var components = ["curl -v"]
+        components.append("-X \(method)")
+        for header in allHTTPHeaderFields ?? [:] {
+            let escapedValue = header.value.replacingOccurrences(of: "\"", with: "\\\"")
+            components.append("-H \"\(header.key): \(escapedValue)\"")
+        }
+        if let httpodyData = httpBody {
+            let httpBody = String(decoding: httpodyData, as: UTF8.self)
+            var escapedBody = httpBody.replacingOccurrences(of: "\\\"", with: "\\\\\"")
+            escapedBody = escapedBody.replacingOccurrences(of: "\"", with: "\\\"")
+            components.append("-d \"\(escapedBody)\"")
+        }
+        components.append("\"\(url.absoluteString)\"")
+        return components.joined(separator: " \\\n\t")
+    }
+}
+
 final class DataLoader: NSObject, URLSessionDelegate {
     private var handelers = [URLSessionTask: TaskHandler]()
     private typealias Completion = (Result<(Data, URLResponse, URLSessionTaskMetrics?), Error>) -> Void
