@@ -38,6 +38,35 @@ extension URLRequest {
     }
 }
 
+actor Serializer {
+    private let decoder: JSONDecoder
+    private let encorder: JSONEncoder
+
+    init(decoder: JSONDecoder?, encoder: JSONEncoder?) {
+        if let decoder = decoder {
+            self.decoder = decoder
+        } else {
+            self.decoder = JSONDecoder()
+            self.decoder.dateDecodingStrategy = .iso8601
+        }
+
+        if let encoder = encoder {
+            self.encorder = encoder
+        } else {
+            self.encorder = JSONEncoder()
+            self.encorder.dateEncodingStrategy = .iso8601
+        }
+    }
+
+    func decode<T: Decodable>(_ data: Data) async throws -> T {
+        try decoder.decode(T.self, from: data)
+    }
+
+    func encode<T: Encodable>(_ entity: T) async throws -> Data {
+        try encorder.encode(entity)
+    }
+}
+
 final class DataLoader: NSObject, URLSessionDelegate {
     private var handelers = [URLSessionTask: TaskHandler]()
     private typealias Completion = (Result<(Data, URLResponse, URLSessionTaskMetrics?), Error>) -> Void
