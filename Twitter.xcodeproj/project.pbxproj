@@ -127,6 +127,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		192FD199277C4D20008679FD /* APIClient */ = {
+			isa = PBXGroup;
+			children = (
+				192FD17B277B56EE008679FD /* APIClient.swift */,
+				192FD197277B5B6F008679FD /* Helpers.swift */,
+			);
+			path = APIClient;
+			sourceTree = "<group>";
+		};
 		2B4B3EE02140D61E00FFD636 = {
 			isa = PBXGroup;
 			children = (
@@ -224,14 +233,13 @@
 		2B4B3F3D2140EC1F00FFD636 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				192FD199277C4D20008679FD /* APIClient */,
 				2B1479162271CB4E00C5AFCA /* TwitterServerAccess.swift */,
 				2B08F7CB21492A3600069BD2 /* Tweet.swift */,
 				2B562AEF2149383000ABBC79 /* User.swift */,
 				2B562AF1214941B700ABBC79 /* JSONParser.swift */,
 				2BED8BA621497F5F00C18BA2 /* TweetObject.swift */,
 				2B1479182271E4FA00C5AFCA /* TwitterAPI.swift */,
-				192FD17B277B56EE008679FD /* APIClient.swift */,
-				192FD197277B5B6F008679FD /* Helpers.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
