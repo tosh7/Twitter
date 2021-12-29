@@ -68,8 +68,55 @@ actor Serializer {
 }
 
 final class DataLoader: NSObject, URLSessionDelegate {
-    private var handelers = [URLSessionTask: TaskHandler]()
+    private var handlers = [URLSessionTask: TaskHandler]()
     private typealias Completion = (Result<(Data, URLResponse, URLSessionTaskMetrics?), Error>) -> Void
+
+    /// Loads data with the given request.
+    func data(for request: URLRequest, session: URLSession) async throws -> (Data, URLResponse, URLSessionTaskMetrics?) {
+        final class Box { var task: URLSessionTask? }
+        let box = Box()
+        return try await withTaskCancellationHandler(handler: {
+            box.task?.cancel()
+        }, operation: {
+            try await withUnsafeThrowingContinuation { continuation in
+                box.task = self.loadData(with: request, session: session) { result in
+                    continuation.resume(with: result)
+                }
+            }
+        })
+    }
+
+    private func loadData(with request: URLRequest, session: URLSession, completion: @escaping Completion) -> URLSessionDataTask {
+        let task = session.dataTask(with: request)
+        session.delegateQueue.addOperation {
+            self.handlers[task] = TaskHandler(completion: completion)
+        }
+        task.resume()
+        return task
+    }
+
+    func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
+        guard let handler = handlers[task] else { return }
+        handlers[task] = nil
+        if let data = handler.data, let response = task.response, error == nil {
+            handler.completion(.success((data, response, handler.metrics)))
+        } else {
+            handler.completion(.failure(error ?? URLError(.unknown)))
+        }
+    }
+
+    func urlSession(_ session: URLSession, task: URLSessionDataTask, didFinishCollectiong metrics: URLSessionTaskMetrics) {
+        handlers[task]?.metrics = metrics
+    }
+
+    func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didRecieve data: Data) {
+        guard let handler = handlers[dataTask] else { return }
+
+        if handler.data == nil {
+            handler.data = Data()
+        }
+        handler.data!.append(data)
+    }
 
     private final class TaskHandler {
         var data: Data?
