@@ -5,7 +5,9 @@
 import Foundation
 
 protocol APIClientDelegate {
-
+    func client(_ client: APIClient, willSendRequest request: inout URLRequest) async
+    func shouldClientRetry(_ client: APIClient, withError error: Error) async -> Bool
+    func client(_ client: APIClient, didReceiveInvalidationResponse response: HTTPURLResponse, data: Data) -> Error
 }
 
 actor APIClient {
