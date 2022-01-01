@@ -54,6 +54,12 @@ actor APIClient {
         self.delegate = configuration.delegate ?? DefaultAPIClientDelegate()
         self.serializer = Serializer(decoder: configuration.decoder, encoder: configuration.encoder)
     }
+
+//    public func send<T: Decodable>(_ request: Request<T?>) async throws -> Response<T?> {
+//        try await send(request) { data in
+//
+//        }
+//    }
 }
 
 enum APIError: Error, LocalizedError {
