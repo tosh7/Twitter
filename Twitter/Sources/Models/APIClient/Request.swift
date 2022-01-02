@@ -23,6 +23,34 @@ struct Request<Response> {
     static func post<U: Encodable>(_ path: String, query: [(String, String?)]? = nil, body: U?, headers: [String: String]? = nil) -> Request {
         Request(method: "POST", path: path, query: query, body: body.map(AnyEncodable.init), headers: headers)
     }
+
+    static func patch(_ path: String, query: [(String, String?)]? = nil, headers: [String: String]? = nil) -> Request {
+        Request(method: "PATCH", path: path, query: query, headers: headers)
+    }
+
+    static func patch<U: Encodable>(_ path: String, query: [(String, String?)]? = nil, body: U?, headers: [String: String]? = nil) -> Request {
+        Request(method: "PATCH", path: path, query: query, body: body.map(AnyEncodable.init), headers: headers)
+    }
+
+    static func delete(_ path: String, query: [(String, String?)]? = nil, headers: [String: String]? = nil) -> Request {
+        Request(method: "DELETE", path: path, query: query, headers: headers)
+    }
+
+    static func delete<U: Encodable>(_ path: String, query: [(String, String?)]? = nil, body: U?, headers: [String: String]? = nil) -> Request {
+        Request(method: "DELETE", path: path, query: query, body: body.map(AnyEncodable.init), headers: headers)
+    }
+
+    static func options(_ path: String, query: [(String, String?)]? = nil, headers: [String: String]? = nil) -> Request {
+        Request(method: "OPTIONS", path: path, query: query, headers: headers)
+    }
+
+    static func head(_ path: String, query: [(String, String?)]? = nil, headers: [String: String]? = nil) -> Request {
+        Request(method: "HEAD", path: path, query: query, headers: headers)
+    }
+
+    static func trace(_ path: String, query: [(String, String?)]? = nil, headers: [String: String]? = nil) -> Request {
+        Request(method: "TRACE", path: path, query: query, headers: headers)
+    }
 }
 
 /// A response with a value and associated metadata.
