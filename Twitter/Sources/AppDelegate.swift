@@ -7,7 +7,8 @@
 //
 
 import UIKit
-//import TwitterKit
+
+let apiClient = ApiClient.shared
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,31 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-        var bearer_token: String = ""
-        if let url = Bundle.main.url(forResource:"Twitter", withExtension: "plist") {
-            do {
-                let data = try Data(contentsOf:url)
-                let swiftDictionary = try PropertyListSerialization.propertyList(from: data, options: [], format: nil) as! [String:Any]
-                bearer_token = swiftDictionary["bearer_token"] as! String
-            } catch {
-                print(error)
-            }
-        }
-
-        let url = URL(string: "https://api.twitter.com/2/tweets/1548894115257282560")!
-        var request = URLRequest(url: url)
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.allHTTPHeaderFields = ["Authorization": "Bearer \(bearer_token)"]
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let data = data else { return }
-            do {
-                let object = try JSONSerialization.jsonObject(with: data)
-                print(object)
-            } catch {
-                print(error)
-            }
-        }
-        task.resume()
 
         return true
     }
