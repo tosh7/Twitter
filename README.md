@@ -37,7 +37,3 @@ TBD
 
 ## API Docs
 All API documents are referenced by [Twitter API v2](https://developer.twitter.com/en/docs).
-
-## Special Thanks
-For the api client part, this project's codes are refrenced. 
-https://github.com/kean/Get 
