@@ -13,7 +13,19 @@ All libraries is installed via Cocoapods.
 
 ## How to start
 1. Clone this repository.
-2. Make `Twitter.plist`, which sould be same list as `Twitter2.plist`, and set Twitter API's APIKey and APISecretKey.
+2. Make `Twitter.plist` such as below. And replace consumer_key and consumer_secret to Twitter API's APIKey and APISecretKey.
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>consumer_key</key>
+	<string></string>
+	<key>consumer_secret</key>
+	<string></string>
+</dict>
+</plist>
+```
 
 `Twitter.plist` is already added in `.gitignore` file for the security.
 
