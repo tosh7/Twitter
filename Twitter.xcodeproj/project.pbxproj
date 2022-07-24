@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		190C509A288D3F550095A7E8 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 190C5099288D3F550095A7E8 /* Colors.xcassets */; };
+		190C509C288D40360095A7E8 /* UIColor+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190C509B288D40360095A7E8 /* UIColor+extension.swift */; };
 		192FD17C277B56EE008679FD /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192FD17B277B56EE008679FD /* APIClient.swift */; };
 		192FD198277B5B6F008679FD /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192FD197277B5B6F008679FD /* Helpers.swift */; };
 		1975FB012885533400BDDC78 /* APIClient+EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1975FB002885533400BDDC78 /* APIClient+EndPoints.swift */; };
@@ -51,6 +53,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		190C5099288D3F550095A7E8 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		190C509B288D40360095A7E8 /* UIColor+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+extension.swift"; sourceTree = "<group>"; };
 		192FD17B277B56EE008679FD /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		192FD197277B5B6F008679FD /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		1975FB002885533400BDDC78 /* APIClient+EndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIClient+EndPoints.swift"; sourceTree = "<group>"; };
@@ -110,6 +114,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		190C509D288D403F0095A7E8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				190C509B288D40360095A7E8 /* UIColor+extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		192FD199277C4D20008679FD /* APIClient */ = {
 			isa = PBXGroup;
 			children = (
@@ -193,6 +205,7 @@
 				2B4B3F1C2140D6F700FFD636 /* Assets.xcassets */,
 				2B4B3F1D2140D6F700FFD636 /* info.plist */,
 				19FC9E1C277372F60050B305 /* Twitter.plist */,
+				190C5099288D3F550095A7E8 /* Colors.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -203,6 +216,7 @@
 				2B4B3F212140D6F700FFD636 /* AppDelegate.swift */,
 				2B4B3F3C2140EBFF00FFD636 /* Controllers */,
 				2B4B3F3D2140EC1F00FFD636 /* Models */,
+				190C509D288D403F0095A7E8 /* Extensions */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -385,6 +399,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				190C509A288D3F550095A7E8 /* Colors.xcassets in Resources */,
 				2B4B3F502140EE4000FFD636 /* TimeLineTableViewCell.xib in Resources */,
 				2B4B3F482140ED9900FFD636 /* ProfileViewController.storyboard in Resources */,
 				2B4D178E2146D68B006CBD36 /* StartViewController.storyboard in Resources */,
@@ -430,6 +445,7 @@
 				2B4B3F4C2140EDF800FFD636 /* TimeLineTableViewController.swift in Sources */,
 				2B4B3F4F2140EE4000FFD636 /* TimeLineTableViewCell.swift in Sources */,
 				2B9F9E322142319300E26BC6 /* StartViewController.swift in Sources */,
+				190C509C288D40360095A7E8 /* UIColor+extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

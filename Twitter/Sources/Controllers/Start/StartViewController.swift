@@ -30,7 +30,7 @@ final class StartViewController: UIViewController {
         let button = UIButton()
         button.setTitle("Login with Twitter", for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = .blue
+        button.backgroundColor = UIColor(named: "Primary")
         button.addTarget(self, action: #selector(loginButtonDidTapped), for: .touchUpInside)
         return button
     }()
