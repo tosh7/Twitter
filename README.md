@@ -9,7 +9,8 @@ This App is also made by Swift Concurrency.
 ## Library dependencies
 - [SnapKit](https://github.com/SnapKit/SnapKit)
 
-All libraries is installed via Cocoapods.
+All libraries is installed via SwiftPackageManager.
+You can check all library dependencies [here](https://github.com/tosh7/Twitter/blob/async_and_await/Twitter.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved).
 
 ## How to start
 1. Clone this repository.
