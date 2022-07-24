@@ -2,10 +2,10 @@ import Foundation
 
 struct TimelinesRequest: RequestType {
     var path: String {
-        return "/2/users/\(userName)/timelines/reverse_chronological"
+        "/2/users/\(id)/timelines/reverse_chronological"
     }
     let method: HTTPMethodType = .get
-    let userName: String = "tosh_3"
+    let id: String = "992472351693406208"
 }
 
 struct Timelines: Codable {
