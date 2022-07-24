@@ -4,17 +4,6 @@
 target 'Twitter' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
-pod 'RealmSwift'
-  # Pods for Twitter
-
-  target 'TwitterTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'TwitterUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
+  pod 'SnapKit'
 
 end

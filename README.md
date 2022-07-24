@@ -6,8 +6,8 @@
 Using Twitter api, get tweets from your time line.
 This App is also made by Swift Concurrency.
 
-## Libraries
-- RealmSwift
+## Library dependencies
+- [SnapKit](https://github.com/SnapKit/SnapKit)
 
 All libraries is installed via Cocoapods.
 
