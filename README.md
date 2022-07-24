@@ -1,7 +1,7 @@
 # iOS client app for Twitter
-![](https://img.shields.io/badge/Xcode-13.2.1%2B-blue.svg)
-![](https://img.shields.io/badge/iOS-13.0%2B-blue.svg)
-![](https://img.shields.io/badge/Swift-5.5.2%2B-orange.svg)  
+![](https://img.shields.io/badge/Xcode-13.4.1%2B-blue.svg)
+![](https://img.shields.io/badge/iOS-15.0%2B-blue.svg)
+![](https://img.shields.io/badge/Swift-5.6.1%2B-orange.svg)  
 
 Using Twitter api, get tweets from your time line.
 This App is also made by Swift Concurrency.
