@@ -3,7 +3,7 @@ import Foundation
 final class ApiClient {
     static let shared: ApiClient = ApiClient()
     let baseUrlString = "https://api.twitter.com"
-    let bearerToken: String = Contents.bearerToken
+    var bearerToken: String = Contents.bearerToken
 
     init() {}
 
