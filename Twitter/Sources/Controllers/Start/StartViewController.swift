@@ -36,7 +36,8 @@ final class StartViewController: UIViewController {
     }()
 
     @objc func loginButtonDidTapped() {
-        guard let url = URL(string: "") else { return }
+        let urlString = "https://twitter.com/i/oauth2/authorize?response_type=code&client_id=\(Contents.clientId)&redirect_uri=\(Contents.redirectURLString)&scope=tweet.read%20users.read%20offline.access&state=\(Contents.oath2State)&code_challenge=\(Contents.oauth2CodeChallenge)&code_challenge_method=s256"
+        guard let url = URL(string: urlString) else { return }
 
         UIApplication.shared.open(url)
     }

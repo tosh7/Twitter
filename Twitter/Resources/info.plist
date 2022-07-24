@@ -21,9 +21,11 @@
 		<dict>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>com.tosh7.twitterscheme</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>twitterkit-iY4lPbxV56mmcBRTgrQaIhpYQ</string>
+				<string>tosh7-twitter</string>
 			</array>
 		</dict>
 	</array>

@@ -3,19 +3,9 @@ import Foundation
 final class ApiClient {
     static let shared: ApiClient = ApiClient()
     let baseUrlString = "https://api.twitter.com"
-    let bearerToken: String
+    let bearerToken: String = Contents.bearerToken
 
-    init() {
-        // Get access token from plist file, if fails application stops immediately
-        do {
-            let url = Bundle.main.url(forResource:"Twitter", withExtension: "plist")!
-            let data = try Data(contentsOf:url)
-            let swiftDictionary = try PropertyListSerialization.propertyList(from: data, options: [], format: nil) as! [String:Any]
-            bearerToken = swiftDictionary["bearer_token"] as! String
-        } catch {
-            fatalError()
-        }
-    }
+    init() {}
 
     func makeGetRequest<Request, Response>(request: Request, completion: @escaping((Result<Response, Error>) -> Void)) where Request: RequestType, Response: Codable {
         let baseUrl = URL(string: baseUrlString + request.path)!
