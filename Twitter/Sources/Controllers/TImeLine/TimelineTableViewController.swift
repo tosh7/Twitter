@@ -1,15 +1,7 @@
 import UIKit
+import SnapKit
 
 final class TimelineTableViewController: UIViewController {
-
-    private lazy var tableView: UITableView = {
-        let tableView = UITableView()
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.register(UINib(nibName: "TimeLineTableViewCell", bundle: nil),
-                           forCellReuseIdentifier: "TweetCell")
-        return tableView
-    }()
 
     private var tweets: [Timelines.TweetData] = [] {
         didSet {
@@ -40,6 +32,15 @@ final class TimelineTableViewController: UIViewController {
     }
 
     required init?(coder: NSCoder) { fatalError() }
+
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(UINib(nibName: "TimeLineTableViewCell", bundle: nil),
+                           forCellReuseIdentifier: "TweetCell")
+        return tableView
+    }()
 }
 
 extension TimelineTableViewController: UITableViewDataSource {
