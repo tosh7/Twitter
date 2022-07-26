@@ -35,7 +35,7 @@ You can check all library dependencies [here](https://github.com/tosh7/Twitter/b
 `Twitter.plist` is added in `.gitignore` file for the security.
 
 Twitter authentification is base on OAuth2.  
-oauth_state and oauth_code_challenge is generated base on below document.
+oauth_state and oauth_code_challenge is generated base on below document.  
 https://datatracker.ietf.org/doc/html/rfc7636
 
 ## How to use
