@@ -31,7 +31,7 @@
 		2B4B3F422140ECFF00FFD636 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4B3F412140ECFF00FFD636 /* TabBarViewController.swift */; };
 		2B4B3F482140ED9900FFD636 /* ProfileViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B4B3F472140ED9900FFD636 /* ProfileViewController.storyboard */; };
 		2B4B3F4A2140EDAA00FFD636 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4B3F492140EDAA00FFD636 /* ProfileViewController.swift */; };
-		2B4B3F4C2140EDF800FFD636 /* TimeLineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4B3F4B2140EDF800FFD636 /* TimeLineTableViewController.swift */; };
+		2B4B3F4C2140EDF800FFD636 /* TimelineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4B3F4B2140EDF800FFD636 /* TimelineTableViewController.swift */; };
 		2B4B3F4F2140EE4000FFD636 /* TimeLineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4B3F4D2140EE4000FFD636 /* TimeLineTableViewCell.swift */; };
 		2B4B3F502140EE4000FFD636 /* TimeLineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B4B3F4E2140EE4000FFD636 /* TimeLineTableViewCell.xib */; };
 		2B4D178E2146D68B006CBD36 /* StartViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B4D178D2146D68B006CBD36 /* StartViewController.storyboard */; };
@@ -87,7 +87,7 @@
 		2B4B3F412140ECFF00FFD636 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		2B4B3F472140ED9900FFD636 /* ProfileViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileViewController.storyboard; sourceTree = "<group>"; };
 		2B4B3F492140EDAA00FFD636 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		2B4B3F4B2140EDF800FFD636 /* TimeLineTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineTableViewController.swift; sourceTree = "<group>"; };
+		2B4B3F4B2140EDF800FFD636 /* TimelineTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineTableViewController.swift; sourceTree = "<group>"; };
 		2B4B3F4D2140EE4000FFD636 /* TimeLineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineTableViewCell.swift; sourceTree = "<group>"; };
 		2B4B3F4E2140EE4000FFD636 /* TimeLineTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeLineTableViewCell.xib; sourceTree = "<group>"; };
 		2B4D178D2146D68B006CBD36 /* StartViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StartViewController.storyboard; sourceTree = "<group>"; };
@@ -281,7 +281,7 @@
 		2B4B3F432140ED0C00FFD636 /* TImeLine */ = {
 			isa = PBXGroup;
 			children = (
-				2B4B3F4B2140EDF800FFD636 /* TimeLineTableViewController.swift */,
+				2B4B3F4B2140EDF800FFD636 /* TimelineTableViewController.swift */,
 				2B4B3F4D2140EE4000FFD636 /* TimeLineTableViewCell.swift */,
 				2B4B3F4E2140EE4000FFD636 /* TimeLineTableViewCell.xib */,
 			);
@@ -462,7 +462,7 @@
 				2B4B3F4A2140EDAA00FFD636 /* ProfileViewController.swift in Sources */,
 				192FD17C277B56EE008679FD /* APIClient.swift in Sources */,
 				1975FB012885533400BDDC78 /* APIClient+EndPoints.swift in Sources */,
-				2B4B3F4C2140EDF800FFD636 /* TimeLineTableViewController.swift in Sources */,
+				2B4B3F4C2140EDF800FFD636 /* TimelineTableViewController.swift in Sources */,
 				2B4B3F4F2140EE4000FFD636 /* TimeLineTableViewCell.swift in Sources */,
 				2B9F9E322142319300E26BC6 /* StartViewController.swift in Sources */,
 				190C509C288D40360095A7E8 /* UIColor+extension.swift in Sources */,
