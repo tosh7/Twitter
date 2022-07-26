@@ -32,7 +32,11 @@ You can check all library dependencies [here](https://github.com/tosh7/Twitter/b
 </plist>
 ```
 
-`Twitter.plist` is already added in `.gitignore` file for the security.
+`Twitter.plist` is added in `.gitignore` file for the security.
+
+Twitter authentification is base on OAuth2.  
+oauth_state and oauth_code_challenge is generated base on below document.
+https://datatracker.ietf.org/doc/html/rfc7636
 
 ## How to use
 1. Press 'Sign in with Twitter' button
