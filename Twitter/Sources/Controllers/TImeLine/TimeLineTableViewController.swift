@@ -1,15 +1,15 @@
-//
-//  TableViewController.swift
-//  Twitter
-//
-//  Created by Satoshi Komatsu on 2018/09/06.
-//  Copyright © 2018年 Satoshi Komatsu. All rights reserved.
-//
-
 import UIKit
 
 class TimeLineTableViewController: UITableViewController {
-    
+
+    init() {
+        super.init(nibName: nil, bundle: nil)
+
+        print("TimelineTVC")
+    }
+
+    required init?(coder: NSCoder) { fatalError() }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: "TimeLineTableViewCell", bundle: nil),

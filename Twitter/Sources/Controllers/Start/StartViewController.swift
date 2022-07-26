@@ -1,7 +1,10 @@
 import UIKit
 import SnapKit
+import Combine
 
 final class StartViewController: UIViewController {
+
+    private var cancellables: Set<AnyCancellable> = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -11,25 +14,24 @@ final class StartViewController: UIViewController {
         loginWithTwitterButton.snp.makeConstraints {
             $0.centerX.centerY.equalToSuperview()
             $0.height.equalTo(50)
-            $0.width.equalTo(200)
+            $0.width.equalTo(300)
         }
 
-        Task {
-//            let tweets = await apiClient.getTweet(.init(tweetId: "1548894115257282560"))
-//            print(tweets)
-
-//            let timeline = await apiClient.getTimeline(.init())
-//            print(timeline)
-
-            let user = await apiClient.getUser(.init(username: "tosh_3"))
-            print(user)
-        }
+        NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)
+            .sink { [weak self] _ in
+                guard let self = self else { return }
+                let vc = TimeLineTableViewController()
+                vc.modalPresentationStyle = .fullScreen
+                self.present(vc, animated: true)
+            }
+            .store(in: &cancellables)
     }
 
     private lazy var loginWithTwitterButton: UIButton = {
         let button = UIButton()
         button.setTitle("Login with Twitter", for: .normal)
         button.setTitleColor(.white, for: .normal)
+        button.layer.cornerRadius = 10
         button.backgroundColor = UIColor(named: "Primary")
         button.addTarget(self, action: #selector(loginButtonDidTapped), for: .touchUpInside)
         return button

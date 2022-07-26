@@ -17,21 +17,10 @@
                         <viewLayoutGuide key="safeArea" id="MW2-N7-Zex"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
-                    <connections>
-                        <segue destination="Sti-iU-wra" kind="presentation" identifier="toTimeLine" id="snn-pv-O65"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="geb-fe-N9Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="105" y="141"/>
-        </scene>
-        <!--TabBarViewController-->
-        <scene sceneID="4Y7-oE-5nh">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="toTImeLine" storyboardName="TabBarViewController" id="Sti-iU-wra" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cFp-VL-UlE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="839" y="140"/>
         </scene>
     </scenes>
 </document>

@@ -21,6 +21,8 @@ final class Contents {
 
     static let redirectURLString: String = "tosh7-twitter://twitter-auth/"
 
+    var authCode: String?
+
     private static func getValue(_ key: String) -> Any? {
         // Get a value from plist file, if fails application stops immediately
         do {
