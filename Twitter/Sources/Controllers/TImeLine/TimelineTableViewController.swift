@@ -2,15 +2,15 @@ import UIKit
 
 final class TimelineTableViewController: UIViewController {
 
-    private var tableView: UITableView = UITableView() {
-        didSet {
-            tableView.dataSource = self
-            tableView.delegate = self
-            tableView.register(UINib(nibName: "TimeLineTableViewCell", bundle: nil),
-                               forCellReuseIdentifier: "TweetCell")
-            tableView.rowHeight = 166
-        }
-    }
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(UINib(nibName: "TimeLineTableViewCell", bundle: nil),
+                           forCellReuseIdentifier: "TweetCell")
+        return tableView
+    }()
+
     private var tweets: [Timelines.TweetData] = [] {
         didSet {
             DispatchQueue.main.async {
