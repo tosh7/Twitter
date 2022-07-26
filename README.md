@@ -20,9 +20,13 @@ You can check all library dependencies [here](https://github.com/tosh7/Twitter/b
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>consumer_key</key>
+	<key>bearer_token</key>
 	<string></string>
-	<key>consumer_secret</key>
+	<key>client_id</key>
+	<string></string>
+	<key>oauth2_state</key>
+	<string></string>
+	<key>oauth2_code_challenge</key>
 	<string></string>
 </dict>
 </plist>
@@ -31,10 +35,15 @@ You can check all library dependencies [here](https://github.com/tosh7/Twitter/b
 `Twitter.plist` is already added in `.gitignore` file for the security.
 
 ## How to use
-TBD
+1. Press 'Sign in with Twitter' button
+2. Then, you will get your timeline.
 
 ## How it works
-TBD
+
+https://user-images.githubusercontent.com/27297319/181052670-de4e84a1-8608-4c8a-ba80-f5848762fc96.mov
+
+
+
 
 ## API Docs
 All API documents are referenced by [Twitter API v2](https://developer.twitter.com/en/docs).
