@@ -50,4 +50,5 @@ https://user-images.githubusercontent.com/27297319/181052670-de4e84a1-8608-4c8a-
 
 
 ## API Docs
-All API documents are referenced by [Twitter API v2](https://developer.twitter.com/en/docs).
+All API documents are referenced by [Twitter API v2](https://developer.twitter.com/en/docs).  
+All api endpoints are defined [here](https://developer.twitter.com/en/portal/products).
