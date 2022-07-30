@@ -18,13 +18,12 @@ final class StartViewController: UIViewController {
         }
 
         NotificationCenter.default.publisher(for: .authSuccessed)
+            .receive(on: RunLoop.main)
             .sink { [weak self] _ in
                 guard let self = self else { return }
-                DispatchQueue.main.async {
-                    let vc = TimelineTableViewController()
-                    vc.modalPresentationStyle = .fullScreen
-                    self.present(vc, animated: true)
-                }
+                let vc = TimelineTableViewController()
+                vc.modalPresentationStyle = .fullScreen
+                self.present(vc, animated: true)
             }
             .store(in: &cancellables)
     }
