@@ -23,18 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         _ = RouteManger(url)
-        guard let authCode = Contents.shared.authCode else { return true }
-        Task {
-            let result = await apiClient.auth(.init(code: authCode))
-            switch result {
-            case let .success(token):
-                apiClient.bearerToken = token.access_token
-            case .failure(let error):
-                print(error)
-            }
-
-            NotificationCenter.default.post(name: .authSuccessed, object: nil)
-        }
+        AuthManager.shared.setup()
         return true
     }
 

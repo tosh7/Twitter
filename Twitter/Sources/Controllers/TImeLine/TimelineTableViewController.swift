@@ -20,8 +20,13 @@ final class TimelineTableViewController: UIViewController {
             $0.edges.equalToSuperview()
         }
 
+        call()
+    }
+
+    private func call() {
         Task { @MainActor in
-            let result = await apiClient.getTimeline(.init())
+            guard let myId = AuthManager.shared.me?.data.id else { return }
+            let result = await apiClient.getTimeline(.init(id: myId))
             switch result {
             case .success(let timeline):
                 self.tweets = timeline.data

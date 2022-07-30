@@ -5,7 +5,11 @@ struct TimelinesRequest: RequestType {
         "/2/users/\(id)/timelines/reverse_chronological"
     }
     let method: HTTPMethodType = .get
-    let id: String = "992472351693406208"
+    var id: String
+
+    init(id: String) {
+        self.id = id
+    }
 }
 
 struct Timelines: Codable {
