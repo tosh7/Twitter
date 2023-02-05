@@ -3,6 +3,7 @@
 ![](https://img.shields.io/badge/iOS-15.0%2B-blue.svg)
 ![](https://img.shields.io/badge/Swift-5.6.1%2B-orange.svg)  
 
+⚠️ iOS client app for Twitter has reached end-of-life.  Twitter API is now closed, and I considered new API plan which costs $100 per mondth is not worth to use.
 Using Twitter api, get tweets from your time line.
 This App is also made by Swift Concurrency.
 
