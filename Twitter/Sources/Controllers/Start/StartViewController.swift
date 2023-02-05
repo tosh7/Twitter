@@ -1,94 +1,47 @@
-//
-//  StartViewController.swift
-//  Twitter
-//
-//  Created by Satoshi Komatsu on 2018/09/07.
-//  Copyright © 2018年 Satoshi Komatsu. All rights reserved.
-//
-
 import UIKit
-import TwitterKit
-import TwitterCore
-import RealmSwift
+import SnapKit
+import Combine
 
 final class StartViewController: UIViewController {
-    
-    let realm = try! Realm()
-    
-    var tweets: [Tweet] = []
-    var userInfo: [User] = []
-    
+
+    private var cancellables: Set<AnyCancellable> = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let logInButton = TWTRLogInButton(logInCompletion: { session, error in
-            if (session != nil) {
-                print("signed in as \(String(describing: session?.userName))")
-            } else {
-                print("error: \(String(describing: error?.localizedDescription))");
+
+        view.addSubview(loginWithTwitterButton)
+
+        loginWithTwitterButton.snp.makeConstraints {
+            $0.centerX.centerY.equalToSuperview()
+            $0.height.equalTo(50)
+            $0.width.equalTo(300)
+        }
+
+        NotificationCenter.default.publisher(for: .authSuccessed)
+            .receive(on: RunLoop.main)
+            .sink { [weak self] _ in
+                guard let self = self else { return }
+                let vc = TimelineTableViewController()
+                vc.modalPresentationStyle = .fullScreen
+                self.present(vc, animated: true)
             }
-        })
-        logInButton.center = self.view.center
-        self.view.addSubview(logInButton)
-        
-        
-        TWTRTwitter.sharedInstance().logIn(completion: { (session, error) in
-            if (session != nil) {
-                print("signed in as \(String(describing: session?.userName))")
-                
-                var clientError: NSError?
-                
-                let apiClient = TWTRAPIClient(userID: session?.userID)
-                let request = apiClient.urlRequest(
-                    withMethod: "GET",
-                    urlString: "https://api.twitter.com/1.1/statuses/home_timeline.json",
-                    parameters: [
-                        "user_id": session?.userID as Any,
-                        "count": "11",
-                        ],
-                    error: &clientError
-                )
-                
-                apiClient.sendTwitterRequest(request) { response, data, error in // NSURLResponse?, NSData?, NSError?
-                    if let error = error {
-                        print(error.localizedDescription)
-                    } else if let data = data, let json = String(data: data, encoding: .utf8) {
-                        print(json)
-                        self.tweets = JSONParser.parse(data: data)
-                        
-                        for i in 0...9 {
-                            let realmData = TweetObject()
-                            
-                            let url = URL(string: (self.tweets[9 - i].user.profileImageUrlHttps!))
-                            let imageData = try? Data(contentsOf: url!)
-                            
-                            realmData.iconImageData = imageData!
-                            realmData.userName = (self.tweets[9 - i].user.name)
-                            realmData.userID = (self.tweets[9 - i].user.profileImageUrlHttps)
-                            realmData.tweet = (self.tweets[9 - i].text)
-                            realmData.favoriteCount = self.tweets[9 - i].favoriteCount
-                            realmData.retweetCount = self.tweets[9 - i].retweetCount
-                            
-                            try! self.realm.write {
-                                self.realm.add(realmData)
-                            }
-                        }
-                        print((self.tweets[0].text))
-                        print((self.tweets[0].user.name))
-                    }
-                }
-                DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-                    self.performSegue(withIdentifier: "toTimeLine", sender: nil)
-                }
-            } else {
-                print("error: \(String(describing: error?.localizedDescription))")
-            }
-            
-            
-        })
+            .store(in: &cancellables)
     }
-    
-    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-        return TWTRTwitter.sharedInstance().application(app, open: url, options: options)
+
+    private lazy var loginWithTwitterButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Login with Twitter", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.layer.cornerRadius = 10
+        button.backgroundColor = UIColor(named: "Primary")
+        button.addTarget(self, action: #selector(loginButtonDidTapped), for: .touchUpInside)
+        return button
+    }()
+
+    @objc func loginButtonDidTapped() {
+        let urlString = "https://twitter.com/i/oauth2/authorize?response_type=code&client_id=\(Contents.clientId)&redirect_uri=\(Contents.redirectURLString)&scope=tweet.read%20users.read%20offline.access&state=\(Contents.oath2State)&code_challenge=\(Contents.oauth2CodeChallenge)&code_challenge_method=plain"
+        guard let url = URL(string: urlString) else { return }
+
+        UIApplication.shared.open(url)
     }
 }

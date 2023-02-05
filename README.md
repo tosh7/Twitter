@@ -1,26 +1,55 @@
-# Twitterのクライアントアプリ
+# iOS client app for Twitter
+![](https://img.shields.io/badge/Xcode-13.4.1%2B-blue.svg)
+![](https://img.shields.io/badge/iOS-15.0%2B-blue.svg)
+![](https://img.shields.io/badge/Swift-5.6.1%2B-orange.svg)  
 
-Twitterのアカウントでログインをして、タイムラインを取得してくるアプリです。
+⚠️ iOS client app for Twitter has reached end-of-life.  Twitter API is now closed, and I considered new API plan which costs $100 per mondth is not worth to use.
+Using Twitter api, get tweets from your time line.
+This App is also made by Swift Concurrency.
 
-## 使用しているライブラリ
-- TwitterKit
-- SwiftyJSON
-- RealmSwift
+## Library dependencies
+- [SnapKit](https://github.com/SnapKit/SnapKit)
 
-全てcocoapodsを使用
+All libraries is installed via SwiftPackageManager.
+You can check all library dependencies [here](https://github.com/tosh7/Twitter/blob/async_and_await/Twitter.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved).
 
-## アプリの動作説明
-StartViewControllerでログイン管理をし、そこでタイムラインの情報を10件取得してきています。
-そのまま、ここでRealmをしようし保存しています。
+## How to start
+1. Clone this repository.
+2. Make `Twitter.plist` such as below. And replace consumer_key and consumer_secret to Twitter API's APIKey and APISecretKey.
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bearer_token</key>
+	<string></string>
+	<key>client_id</key>
+	<string></string>
+	<key>oauth2_state</key>
+	<string></string>
+	<key>oauth2_code_challenge</key>
+	<string></string>
+</dict>
+</plist>
+```
 
-TimeLineViewCellでRealmから値を取ってきてCellに入れるようにしています。
+`Twitter.plist` is added in `.gitignore` file for the security.
 
-アーキテクチャがあまり綺麗にできていなく無駄が多いので、ここの部分をもう少し変更したいと考えています。
+Twitter authentification is base on OAuth2.  
+oauth_state and oauth_code_challenge is generated base on below document.  
+https://datatracker.ietf.org/doc/html/rfc7636
 
-## 実機での動作動画
-![](https://media.giphy.com/media/kPIeuTEeQbM9uULrr8/giphy.gif)
+## How to use
+1. Press 'Sign in with Twitter' button
+2. Then, you will get your timeline.
 
-## 注意点
-レポジトリをprivateからPublicにするにあたり、`Twitter.plist`から、APIkeyとAPISeretKey取ってく量に設定を変更しました。  
-仕様としては、`Twitter.plist`は`.gitignore`の中に入っているのでプロジェクトファイルの`Twitter2.plist`を`Twitter.plist`に変更し
-その中にAPIKeyとAPISecretKeyを入れて実行してください。
+## How it works
+
+https://user-images.githubusercontent.com/27297319/181052670-de4e84a1-8608-4c8a-ba80-f5848762fc96.mov
+
+
+
+
+## API Docs
+All API documents are referenced by [Twitter API v2](https://developer.twitter.com/en/docs).  
+All api endpoints are defined [here](https://developer.twitter.com/en/portal/products).
